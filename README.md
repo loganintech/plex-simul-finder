@@ -34,6 +34,8 @@ export TAUTULLI_API_KEY="your-api-key"
 
 You can find your API key in Tautulli under **Settings > Web Interface > API Key**.
 
+> **Nix users:** A `flake.nix` is included. If you use [direnv](https://direnv.net/), just `direnv allow` and everything (Python + dependencies) is set up automatically. Otherwise `nix develop` drops you into a shell with everything you need.
+
 ## Usage
 
 ```bash
@@ -76,6 +78,3 @@ Users are scored and ranked by suspicion level (default threshold: 20):
 
 [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)
 
----
-
-> **Nix users:** A `flake.nix` is included. If you use [direnv](https://direnv.net/), just `direnv allow` and everything (Python + dependencies) is set up automatically. Otherwise `nix develop` drops you into a shell with everything you need.
