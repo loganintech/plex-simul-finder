@@ -11,25 +11,28 @@ Detect Plex account sharing using [Tautulli](https://tautulli.com/)'s API. Analy
 
 Private IPs (192.168.x, 10.x, etc.) are treated as the same network, so multiple devices at home won't trigger false positives.
 
-## Setup
+## Prerequisites
 
-Requires [Nix](https://nixos.org/) with flakes enabled, or Python 3 with `requests`.
+- Python 3.10+
+- [Tautulli](https://tautulli.com/) with API access enabled
+- The `requests` Python package
+
+### Install dependencies
 
 ```bash
-# With nix + direnv (recommended)
-cd plex-simul-finder
-direnv allow
-
-# Or manually
-nix develop
+pip install requests
 ```
 
-Set your Tautulli connection in `.envrc` or export directly:
+### Configure
+
+Set your Tautulli connection via environment variables or pass them as flags:
 
 ```bash
 export TAUTULLI_HOST="tautulli.example.com"
 export TAUTULLI_API_KEY="your-api-key"
 ```
+
+You can find your API key in Tautulli under **Settings > Web Interface > API Key**.
 
 ## Usage
 
@@ -71,4 +74,8 @@ Users are scored and ranked by suspicion level (default threshold: 20):
 
 ## License
 
-[The Unlicense](https://unlicense.org/) — public domain. Do whatever you want with it.
+[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)
+
+---
+
+> **Nix users:** A `flake.nix` is included. If you use [direnv](https://direnv.net/), just `direnv allow` and everything (Python + dependencies) is set up automatically. Otherwise `nix develop` drops you into a shell with everything you need.
